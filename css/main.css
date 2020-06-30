@@ -8,6 +8,7 @@
   --footer-bg-color: #2f303a;
   --icon-color: #afb1b8;
   --footer-bg-socicon: rgba(255, 255, 255, 0.1);
+  --time-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .visually-hidden {
@@ -613,7 +614,6 @@ button {
 .projects-slogan {
   display: block;
   position: absolute;
-  opacity: 0;
   bottom: 0;
   width: 100%;
   height: 100%;
@@ -622,10 +622,12 @@ button {
   font-size: 18px;
   line-height: 1.56;
   padding: 63px 24px;
+  transform: translateY(100%);
+  transition: transform 250ms var(--time-function);
 }
 .projects-list .projects-item:hover .projects-slogan,
 .projects-list .projects-item:focus .projects-slogan {
-  opacity: 1;
+  transform: translateY(0);
 }
 .projects-item:nth-child(3n) {
   margin-right: 0px;
